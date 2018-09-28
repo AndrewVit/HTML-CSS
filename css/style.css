@@ -1,0 +1,130 @@
+
+
+span{
+   background-color:firebrick;
+   background: 
+   
+}
+
+nav {
+   width: 960px;
+   margin: 0, auto;
+   margin-left: 250px;
+}
+
+nav:before {
+   content: "";
+   display: block;
+   height: 50px;
+   width: 100%;
+   background: #777;
+   position: absolute;
+   left: 0;
+   z-index: -1;
+}
+
+ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   height: 50px;
+   
+}
+ul li{
+   float: left;
+   margin-left: 10px;
+   
+}
+ul li a{
+   color: #fff;
+   display: block;
+   height: 50px;
+   padding: 0,30px;
+   text-transform: uppercase;
+   text-decoration: none;
+   line-height: 50px;
+   
+}
+
+ul li a:hover{
+   background: #d34d34;
+   
+}
+
+
+nav.menu {
+   width: 960px;
+   margin: 0, auto;
+   margin-left: 250px;
+}
+
+nav.menu:before {
+   content: "";
+   display: block;
+   height: 100px;
+   width: 100%;
+   background:#359592;
+   position: absolute;
+   left: 0;
+   z-index: -1;
+   border: 2px, solid gold;
+
+   
+}
+ul.next li{
+   float: left;
+   margin-left: 10px;
+   margin: 10px;
+   padding: 0;
+   list-style: none;
+   height: 50px;
+   
+}
+ul.next li a{
+   color: #fff;
+   display: block;
+   height: 50px;
+   padding: 0,30px;
+   text-transform: uppercase;
+   text-decoration: none;
+   line-height: 50px;
+   
+}
+
+ul.next li a:hover{
+   background: #d34d34;
+   
+}
+div p:first-of-type{
+   color: indigo;
+}
+p:nth-of-type(2){
+   color: red;
+}
+p:nth-of-type(3){
+   color: yellowgreen;
+}
+p:nth-of-type(4){
+   color: hotpink;
+}
+p:nth-of-type(5){
+   color: peru;
+}
+p:nth-of-type(6){
+   color: gold;
+}
+
+
+#four:only-child{
+   background-color: chocolate;
+}
+footer{
+   width: 98%;
+   float: left;
+   padding: 0;
+   background-color: #fafafa;
+   border-top: 2px solid red;
+   margin-top: 30px;
+   height: 0;
+   
+}
