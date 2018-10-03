@@ -1,5 +1,8 @@
 
-
+body{
+   background-image: url(http://fotosale.ua/images/products/22/products.22040.1.b.jpg);
+   background-size: contain;
+}
 span{
    background-color:firebrick;
    background: 
@@ -95,24 +98,10 @@ ul.next li a:hover{
    background: #d34d34;
    
 }
-div p:first-of-type{
+div p{
    color: indigo;
 }
-p:nth-of-type(2){
-   color: red;
-}
-p:nth-of-type(3){
-   color: yellowgreen;
-}
-p:nth-of-type(4){
-   color: hotpink;
-}
-p:nth-of-type(5){
-   color: peru;
-}
-p:nth-of-type(6){
-   color: gold;
-}
+
 
 
 #four:only-child{
