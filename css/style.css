@@ -1,8 +1,6 @@
 
-body{
-   background-image: url(http://fotosale.ua/images/products/22/products.22040.1.b.jpg);
-   background-size: contain;
-}
+
+
 span{
    background-color:firebrick;
    background: 
@@ -115,5 +113,16 @@ footer{
    border-top: 2px solid red;
    margin-top: 30px;
    height: 0;
+}
+.one{
+   margin-left: 20px;
+   display: inline-block;
+   box-sizing: border-box;
+   text-decoration-line: none;
+}
+.one p:first-of-type{
+   margin-left: 40px;
+   background-color: yellow;
+  
    
 }
