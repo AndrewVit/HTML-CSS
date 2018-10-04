@@ -118,11 +118,15 @@ footer{
    margin-left: 20px;
    display: inline-block;
    box-sizing: border-box;
-   text-decoration-line: none;
+   
 }
 .one p:first-of-type{
    margin-left: 40px;
    background-color: yellow;
   
-   
+}
+a{
+   color: red;
+   text-decoration-line: none;
+   text-decoration-color: green;
 }
