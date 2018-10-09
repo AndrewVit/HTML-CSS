@@ -130,3 +130,14 @@ a{
    text-decoration-line: none;
    text-decoration-color: green;
 }
+
+.next img,#zero img {
+  animation: spin_5179 3.5s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin_5179 {
+  0% { transform:rotate(0deg) }
+  42.85714% { transform:rotate(359deg) }
+  100% { transform:rotate(359deg) }
+}
