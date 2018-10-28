@@ -85,14 +85,14 @@ gulp.task('inject', function () {
 // scss
 gulp.task('sass', function () {
   const plugins = [
-    postcssFlexBugsFixes(),
-    postcssFallback(),
-    autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }),
-    oldie(),
-    cssnano()
+    //postcssFlexBugsFixes(),
+    //postcssFallback(),
+    // autoprefixer({
+    //   browsers: ['last 2 versions'],
+    //   cascade: false
+    // }),
+    //oldie(),
+    //cssnano()
   ];
 
   return gulp.src('./src/scss/style.scss')
@@ -103,7 +103,7 @@ gulp.task('sass', function () {
       outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(gcmq())
-    .pipe(postcss(plugins))
+    // .pipe(postcss(plugins))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./src/css'))
     .pipe(browserSync.stream());
@@ -191,7 +191,7 @@ gulp.task('watch', ['browserSync', 'html'], function () {
   gulp.watch('./src/components/**/*.html', ['html'])
     .on('change', browserSync.reload);
 
-  gulp.watch('./src/scss/**/*.scss', ['sass'])
+  gulp.watch(['./src/scss/**/*.scss', './src/components/**/*.scss'], ['sass'])
     .on('change', browserSync.reload);
 
   gulp.watch('./src/js/**/*.js', ['js'])

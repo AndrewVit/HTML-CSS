@@ -22,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.2;
+  background-color: $color-body-background;
 }
 
 *,
@@ -136,4 +137,9 @@ h3 {
   margin: 1.125rem 0;
   font-size: 1.125rem;
   line-height: 1.111;
+}
+
+.container {
+  margin: auto;
+  padding: 0 20px;
 }

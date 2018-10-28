@@ -1,0 +1,12 @@
+.header {
+  &__email-link {
+    color: $color-header-email;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+
+    &:hover {
+      color: $color-nav-active;
+    }
+  }
+}
