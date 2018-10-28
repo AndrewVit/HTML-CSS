@@ -1,0 +1,10 @@
+@import 'normalize';
+@import 'mixins';
+@import 'base';
+
+@import 'variables';
+
+// page blocks
+@import '../components/header/header';
+@import '../components/main/main';
+@import '../components/footer/footer';
