@@ -2,9 +2,11 @@ const gulp = require('gulp'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync').create(),
   imagemin = require('gulp-imagemin'),
+  imageminMozjpeg = require('imagemin-mozjpeg'),
+  imageminGuetzli = require('imagemin-guetzli'),
+  imageminWebp = require('imagemin-webp'),
   htmlmin = require('gulp-htmlmin'),
   removeEmptyLines = require('gulp-remove-empty-lines'),
-  cleanCSS = require('gulp-clean-css'),
   del = require('del'),
   concat = require('gulp-concat'),
   sourcemaps = require('gulp-sourcemaps'),
@@ -23,7 +25,6 @@ const gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   sassGlob = require('gulp-sass-glob'),
   beautify = require('posthtml-beautify'),
-  oldie = require('oldie'),
   cssnano = require('cssnano'),
   postcssFallback = require('postcss-color-rgba-fallback'),
   postcssFlexBugsFixes = require('postcss-flexbugs-fixes'),
@@ -62,11 +63,10 @@ gulp.task('html', function () {
       rules: {
         blankLines: false
       }
-    }
-    )
+    })
   ];
 
-  return gulp.src(['./src/components/*.html'])
+  return gulp.src('./src/components/*.html')
     .pipe(postHtml(plugins))
     .pipe(htmlhint())
     .pipe(htmlhint.reporter())
@@ -85,14 +85,13 @@ gulp.task('inject', function () {
 // scss
 gulp.task('sass', function () {
   const plugins = [
-    //postcssFlexBugsFixes(),
-    //postcssFallback(),
-    // autoprefixer({
-    //   browsers: ['last 2 versions'],
-    //   cascade: false
-    // }),
-    //oldie(),
-    //cssnano()
+    postcssFlexBugsFixes(),
+    postcssFallback(),
+    autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }),
+    cssnano()
   ];
 
   return gulp.src('./src/scss/style.scss')
@@ -103,7 +102,7 @@ gulp.task('sass', function () {
       outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(gcmq())
-    // .pipe(postcss(plugins))
+    .pipe(postcss(plugins))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./src/css'))
     .pipe(browserSync.stream());
@@ -128,11 +127,18 @@ gulp.task('js', function () {
 // img
 gulp.task('img', function () {
   return gulp.src('./src/img/**/*.+(png|jpg|jpeg|svg)')
-    .pipe(imagemin({
+    .pipe(imagemin([{
       interlaced: true,
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }]
-    }))
+    }, imageminMozjpeg({
+      quality: 85
+    }), imageminGuetzli({
+      quality: 85
+    }), imageminWebp({
+      quality: 60,
+      lossless: true
+    })]))
     .pipe(gulp.dest('./dist/img'));
 });
 
@@ -188,7 +194,7 @@ gulp.task('html:build', function () {
 // watch
 gulp.task('watch', ['browserSync', 'html'], function () {
 
-  gulp.watch('./src/components/**/*.html', ['html'])
+  gulp.watch('./src/components/**/*.html', ['html', 'inject'])
     .on('change', browserSync.reload);
 
   gulp.watch(['./src/scss/**/*.scss', './src/components/**/*.scss'], ['sass'])

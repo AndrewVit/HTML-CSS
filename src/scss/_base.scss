@@ -140,6 +140,19 @@ h3 {
 }
 
 .container {
-  margin: auto;
+  width: 360px;
   padding: 0 20px;
+  margin: auto;
+}
+
+@media only screen and (min-width: $screen-resolution-mob) {
+  .container {
+    width: 536px;
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-tablet) {
+  .container {
+    width: 728px;
+  }
 }

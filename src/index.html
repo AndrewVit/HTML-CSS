@@ -10,12 +10,15 @@
     <!-- endinject -->
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <img class="header__logo" src="img/logo.png" alt="Logo" width="183" height="100">
+    <header class="header">
+      <div class="container header__container">
+        <a class="header__logo">
+          <img src="img/logo.png" alt="Logo" width="183" height="100">
+        </a>
+        <a class="header__email-link" href="#">info@CreativeStudio.com</a>
         <nav class="header__nav main-nav">
-          <ul class="main-nav__list">
-            <li class="main-nav__item">
+          <ul class="main-nav__list clearfix">
+            <li class="main-nav__item main-nav__item--active">
               <a href="#">home</a>
             </li>
             <li class="main-nav__item">
@@ -35,11 +38,10 @@
             </li>
           </ul>
         </nav>
-        <a class="header__email-link" href="#">info@CreativeStudio.com</a>
-      </header>
-      <main></main>
-      <footer></footer>
-    </div>
+      </div>
+    </header>
+    <!-- <include src="main/_main.html"></include> -->
+    <!-- <include src="footer/_footer.html"></include> -->
     <!-- inject:js -->
     <!-- endinject -->
   </body>

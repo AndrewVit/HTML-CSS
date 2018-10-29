@@ -5,15 +5,62 @@
     list-style: none;
   }
   &__item {
+    text-align: center;
     a {
-      font-size: 12px;
+      display: block;
+      padding: 8px 0;
+      font-size: 16px;
       font-weight: 600;
       color: $color-nav-font;
       text-transform: uppercase;
       text-decoration: none;
+      outline: none;
 
+      &:focus,
       &:hover {
         color: $color-nav-active;
+        text-decoration: underline;
+      }
+    }
+
+    &--active a {
+      color: $color-nav-active;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-mob) {
+  .main-nav {
+    &__item {
+      float: left;
+      width: 80px;
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-tablet) {
+  .main-nav {
+    &__list,
+    &__item {
+      height: 100%;
+    }
+
+    &__item {
+      width: 82px;
+
+      a {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
       }
     }
   }

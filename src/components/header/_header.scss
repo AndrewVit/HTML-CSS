@@ -1,12 +1,75 @@
 .header {
   &__email-link {
-    color: $color-header-email;
-    text-decoration: none;
+    display: block;
+    margin: 0 0 16px;
     font-size: 14px;
     font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: $color-header-email;
+    outline: none;
 
+    &:focus,
     &:hover {
       color: $color-nav-active;
+    }
+  }
+  &__logo {
+    display: block;
+    width: 146px;
+    padding: 20px 0;
+    margin: auto;
+    font-size: 0;
+  }
+  &__nav {
+    margin-bottom: 16px;
+  }
+  &__container {
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color-page-underline;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-mob) {
+  .header {
+    &__container {
+      position: relative;
+    }
+    &__logo {
+      margin-left: 0;
+      width: 118px;
+    }
+    &__email-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-tablet) {
+  .header {
+    &__nav {
+      float: right;
+      margin: 0;
+      height: 140px;
+      width: 502px;
+    }
+    &__logo {
+      float: left;
+      width: 184px;
+    }
+    &__container {
+      &::after {
+        clear: both;
+        font-size: 0;
+        zoom: 1;
+      }
     }
   }
 }
