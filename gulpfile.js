@@ -54,6 +54,8 @@ gulp.task('default', ['clean'], function () {
 
 // html
 gulp.task('html', function () {
+  const sources = gulp.src(['./src/js/main.js', './src/css/style.css']);
+
   const plugins = [
     htmlInclude({
       encoding: 'utf8',
@@ -68,18 +70,11 @@ gulp.task('html', function () {
 
   return gulp.src('./src/components/*.html')
     .pipe(postHtml(plugins))
+    .pipe(inject(sources, { relative: true }))
     .pipe(htmlhint())
     .pipe(htmlhint.reporter())
     .pipe(gulp.dest('./src'))
     .pipe(browserSync.stream());
-});
-
-// inject
-gulp.task('inject', function () {
-  const sources = gulp.src(['./src/js/main.js', './src/css/style.css']);
-  return gulp.src('./src/*.html')
-    .pipe(inject(sources, { relative: true }))
-    .pipe(gulp.dest('./src'));
 });
 
 // scss
@@ -194,7 +189,7 @@ gulp.task('html:build', function () {
 // watch
 gulp.task('watch', ['browserSync', 'html'], function () {
 
-  gulp.watch('./src/components/**/*.html', ['html', 'inject'])
+  gulp.watch('./src/components/**/*.html', ['html'])
     .on('change', browserSync.reload);
 
   gulp.watch(['./src/scss/**/*.scss', './src/components/**/*.scss'], ['sass'])
@@ -209,7 +204,7 @@ gulp.task('watch', ['browserSync', 'html'], function () {
   gulp.watch('./src/img/**/*.+(png|jpg|jpeg|svg)')
     .on('change', browserSync.reload);
 
-  runSequence('js', 'sass', 'inject');
+  runSequence('js', 'sass');
 });
 
 gulp.task('clearCache', function () {

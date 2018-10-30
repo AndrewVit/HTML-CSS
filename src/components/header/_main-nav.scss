@@ -4,8 +4,10 @@
     margin: 0;
     list-style: none;
   }
+
   &__item {
     text-align: center;
+
     a {
       display: block;
       padding: 8px 0;
@@ -25,6 +27,8 @@
 
     &--active a {
       color: $color-nav-active;
+      pointer-events: none;
+      cursor: default;
     }
   }
 }
@@ -34,6 +38,7 @@
     &__item {
       float: left;
       width: 80px;
+      
       a {
         font-size: 12px;
       }

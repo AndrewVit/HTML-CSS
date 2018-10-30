@@ -1,0 +1,127 @@
+.promo {
+  position: relative;
+  padding: 20px;
+  background: $color-promo-background linear-gradient(to right, $color-promo-gradient-statrt, $color-promo-gradient-end);
+
+  &__label {
+    margin: 0 0 8px;
+    padding: 0;
+    color: #ffffff;
+    text-shadow: 1px 1.732px 1.96px rgba(144, 63, 3, 0.35);
+    text-transform: uppercase;
+  }
+
+  &__img {
+    display: none;
+  }
+
+  &__content {
+    padding: 8px;
+    color: #ffffff;
+    background-color: $color-promo-content-background;
+  }
+
+  &__slogan {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-header-email;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-promo-link;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-mob) {
+  .promo {
+    &__label {
+      margin-bottom: 12px;
+      font-size: 40px;
+      line-height: 1;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__img {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 3;
+      width: 192px;
+      box-shadow: -1px 16px 16px #000000;
+
+      &--second {
+        z-index: 1;
+        right: 28px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-tablet) {
+  .promo {
+    &__label {
+      margin-bottom: 24px;
+      font-size: 72px;
+      line-height: .9;
+    }
+
+    &__img {
+      width: 262px;
+      box-shadow: -1px 16px 24px #000000;
+
+      &--second {
+        right: 42px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-resolution-desktop) {
+  .promo {
+    padding: 26px 32px 40px;
+
+    &__label {
+      font-size: 86px;
+      margin-bottom: 36px;
+    }
+
+    &__slogan {
+      float: left;
+    }
+
+    &__link {
+      float: right;
+    }
+
+    &__content {
+      padding: 12px 14px;
+    }
+
+    &__img {
+      width: 326px;
+      box-shadow: -1px 16px 32px #000000;
+
+      &--second {
+        right: 102px;
+      }
+    }
+  }
+}

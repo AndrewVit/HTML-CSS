@@ -156,3 +156,9 @@ h3 {
     width: 728px;
   }
 }
+
+@media only screen and (min-width: $screen-resolution-desktop) {
+  .container {
+    width: 960px;
+  }
+}

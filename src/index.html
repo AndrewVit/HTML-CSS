@@ -6,41 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- endinject -->
   </head>
   <body>
-    <header class="header">
-      <div class="container header__container">
-        <a class="header__logo">
-          <img src="img/logo.png" alt="Logo" width="183" height="100">
-        </a>
-        <a class="header__email-link" href="#">info@CreativeStudio.com</a>
-        <nav class="header__nav main-nav">
-          <ul class="main-nav__list clearfix">
-            <li class="main-nav__item main-nav__item--active">
-              <a href="#">home</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#">about us</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#">portfolio</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#">services</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#">blog</a>
-            </li>
-            <li class="main-nav__item">
-              <a href="#">contact us</a>
-            </li>
-          </ul>
-        </nav>
+    <!-- <include src="header/_header.html"></include> -->
+    <main class="main">
+      <div class="container">
+        <section class="main__promo promo">
+          <h1 class="promo__label">
+            creative
+            <br>
+            design
+            <br>
+            services
+          </h1>
+          <div class="promo__content clearfix">
+            <span class="promo__slogan">here’s some nice work</span>
+            <a class="promo__link" href="#">view portfolio</a>
+          </div>
+          <img class="promo__img promo__img" src="img/promo_1.jpg" alt="Web site example image." width="327" height="363">
+          <img class="promo__img promo__img--second" src="img/promo_2.jpg" alt="Other web site example image." width="304" height="303">
+        </section>
+        <section class="main__feachers feachers clearfix">
+          <h2 class="visually-hidden">Our feachers</h2>
+          <div class="feachers__col">
+            <h3 class="feachers__titel">about us</h3>
+            <p class="feachers__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem lobortis scelerisque. Praesent eget consequat libero.
+              <a class="feachers__link" href="#">read</a>
+            </p>
+          </div>
+          <div class="feachers__col">
+            <h3 class="feachers__titel">our benefits</h3>
+            <ul class="feachers__list">
+              <li class="feachers__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa.</li>
+              <li class="feachers__item">Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem lobortis scelerisque. Praesent eget consequat</li>
+              <li class="feachers__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa.</li>
+            </ul>
+          </div>
+          <div class="feachers__col">
+            <h3 class="feachers__titel">testimonials</h3>
+            <blockquote class="feachers__quote">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada porta posuere quis massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem lobortis scelerisque.
+              <cite class="feachers__cite">Rafi, Graphicsfuel.com</cite>
+            </blockquote>
+          </div>
+        </section>
       </div>
-    </header>
-    <!-- <include src="main/_main.html"></include> -->
+    </main>
     <!-- <include src="footer/_footer.html"></include> -->
     <!-- inject:js -->
     <!-- endinject -->
