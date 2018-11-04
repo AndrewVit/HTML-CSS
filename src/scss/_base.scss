@@ -55,12 +55,25 @@ textarea {
 }
 
 button {
+  -webkit-appearance: button;
+  overflow: visible;
   margin: 0;
   padding: 0;
   border: none;
+  font-family: inherit;
   color: inherit;
+  text-transform: none;
   background-color: transparent;
 }
+
+button::-moz-focus-inner {
+   border-style: none;
+   padding: 0;
+ }
+
+ button:-moz-focusring {
+   outline: 1px dotted ButtonText;
+ }
 
 img:not([alt]),
 img[alt=""] {
