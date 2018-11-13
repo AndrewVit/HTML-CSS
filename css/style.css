@@ -1,13 +1,10 @@
 
 
-body{background: #CE5937;
-background: -moz-linear-gradient(left, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
-background: -webkit-linear-gradient(left, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
-background: linear-gradient(to right, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
-}
-span{
-   background-color:firebrick;
-   background: 
+body{
+   
+      ::backdrop {
+    background: rgba(0,0,0,0.7);
+   }
    
 }
 
@@ -134,6 +131,7 @@ a{
    color: red;
    text-decoration-line: none;
    text-decoration-color: green;
+   transition: 2s;
 }
 
 .next img,#zero img {
@@ -143,7 +141,7 @@ a{
 
 @keyframes spin_5179 {
   0% { transform:rotate(0deg) }
-  42.85714% { transform:rotate(359deg) }
+ 150% { transform:rotate(359deg) }
   100% { transform:rotate(359deg) }
 }
 #demotext {
@@ -152,4 +150,8 @@ background: #232323;
 text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
 color: #FFFFFF;
 background: #232323;
+}
+
+div {
+   background-image: linear-gradient(red,green);
 }
