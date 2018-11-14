@@ -13,20 +13,20 @@
       padding: 8px 0;
       font-size: 16px;
       font-weight: 600;
-      color: $color-nav-font;
+      color: $color-link;
       text-transform: uppercase;
       text-decoration: none;
       outline: none;
 
       &:focus,
       &:hover {
-        color: $color-nav-active;
+        color: $color-link-active;
         text-decoration: underline;
       }
     }
 
     &--active a {
-      color: $color-nav-active;
+      color: $color-link-active;
       pointer-events: none;
       cursor: default;
     }
@@ -38,7 +38,7 @@
     &__item {
       float: left;
       width: 80px;
-      
+
       a {
         font-size: 12px;
       }

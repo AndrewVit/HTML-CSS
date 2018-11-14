@@ -5,6 +5,7 @@ const gulp = require('gulp'),
   imageminMozjpeg = require('imagemin-mozjpeg'),
   imageminGuetzli = require('imagemin-guetzli'),
   imageminWebp = require('imagemin-webp'),
+  svgmin = require('gulp-svgmin'),
   htmlmin = require('gulp-htmlmin'),
   removeEmptyLines = require('gulp-remove-empty-lines'),
   del = require('del'),
@@ -122,6 +123,7 @@ gulp.task('img', function () {
       quality: 60,
       lossless: true
     })]))
+    .pipe(svgmin())
     .pipe(gulp.dest('./dist/img'));
 });
 

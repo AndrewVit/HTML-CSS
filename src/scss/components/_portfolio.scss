@@ -1,0 +1,77 @@
+.portfolio {
+  position: relative;
+  padding-top: 20px;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-page-underline;
+  }
+
+  &__titel {
+    position: relative;
+    margin: 0 0 16px 0;
+    padding: 0;
+    padding-left: 28px;
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-titel;
+    text-transform: uppercase;
+
+    &:before {
+      content: "→";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+
+    &:before {
+      content: "view →";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding-top: .5em;
+      padding-right: .5em;
+      padding-bottom: .4em;
+      padding-left: .6em;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $color-link-active;
+      background-color: $color-link;
+    }
+  }
+
+  &__item {
+    float: left;
+    margin: 0 8px 8px 0;
+    width: calc(50% - 8px);
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+}

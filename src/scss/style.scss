@@ -4,11 +4,12 @@
 @import 'base';
 
 // page blocks
-@import 'components/header';
-@import 'components/main-nav';
+@import './components/header';
+@import './components/main-nav';
 
-@import 'components/main';
-@import 'components/promo';
-@import 'components/feachers';
+@import './components/main';
+@import './components/promo';
+@import './components/feachers';
+@import './components/portfolio';
 
-@import 'components/footer';
+@import './components/footer';
